@@ -16,22 +16,20 @@ Patch0:		codegen.patch
 URL:		http://seafile.com/
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	pkgconfig
 BuildRequires:	ccnet-devel = %{version}
 BuildRequires:	curl-devel
 BuildRequires:	glib2-devel
 BuildRequires:	intltool
 BuildRequires:	jansson-devel
-BuildRequires:	libarchive-devel
 BuildRequires:	libevent-devel
 BuildRequires:	libfuse-devel >= 2.7.3
 BuildRequires:	libtool
 BuildRequires:	libuuid-devel
-BuildRequires:	libzdb-devel
 BuildRequires:	openssl-devel
 BuildRequires:	python-devel
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
-BuildRequires:	sqlite-devel
 BuildRequires:	vala
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
