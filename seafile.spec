@@ -1,6 +1,8 @@
 # NOTE:
 # using -server tag because 5.1.2..5.1.2-server differ
 # http://manual.seafile.com/build_seafile/server.html
+# explanation of the tags:
+# http://manual.seafile.com/deploy/#for-those-that-want-to-package-seafile-server
 # TODO
 # - fix python to install sitescriptdir: %{py_sitedir}/seafile
 
