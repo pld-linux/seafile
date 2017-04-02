@@ -9,7 +9,7 @@
 Summary:	File syncing and sharing software with file encryption and group sharing
 Name:		seafile
 Version:	5.1.2
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Applications/Networking
 Source0:	https://github.com/haiwen/seafile/archive/v%{version}-server/%{name}-%{version}.tar.gz
