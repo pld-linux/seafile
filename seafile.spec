@@ -8,24 +8,26 @@
 
 Summary:	File syncing and sharing software with file encryption and group sharing
 Name:		seafile
-Version:	5.1.2
-Release:	3
+Version:	6.2.5
+Release:	1
 License:	GPL v2
 Group:		Applications/Networking
-Source0:	https://github.com/haiwen/seafile/archive/v%{version}-server/%{name}-%{version}.tar.gz
-# Source0-md5:	5fa7f0403aa168088c42498018f72422
+Source0:	https://github.com/haiwen/seafile/archive/v%{version}.tar.gz
+# Source0-md5:	220790c24a8cb1ff88bacc03e4e87976
 Patch0:		codegen.patch
 URL:		http://seafile.com/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	pkgconfig
-BuildRequires:	ccnet-devel = %{version}
+BuildRequires:	ccnet-devel
 BuildRequires:	curl-devel
 BuildRequires:	glib2-devel
 BuildRequires:	intltool
 BuildRequires:	jansson-devel
 BuildRequires:	libevent-devel
 BuildRequires:	libfuse-devel >= 2.7.3
+# for bin/searpc-codegen
+BuildRequires:	libsearpc
 BuildRequires:	libtool
 BuildRequires:	libuuid-devel
 BuildRequires:	openssl-devel
@@ -53,7 +55,7 @@ The %{name}-devel package contains libraries and header files for
 developing applications that use %{name}.
 
 %prep
-%setup -qn %{name}-%{version}-server
+%setup -q
 %patch0 -p1
 
 # bogus destdir?
@@ -98,8 +100,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/seaf-daemon.1*
 %dir %{py_sitedir}/seafile
 %{py_sitedir}/seafile/*.py[co]
-%dir %{py_sitedir}/seaserv
-%{py_sitedir}/seaserv/*.py[co]
 
 %files devel
 %defattr(644,root,root,755)
