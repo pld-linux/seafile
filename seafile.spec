@@ -8,13 +8,12 @@
 
 Summary:	File syncing and sharing software with file encryption and group sharing
 Name:		seafile
-Version:	6.2.5
-Release:	2
+Version:	7.0.5
+Release:	1
 License:	GPL v2
 Group:		Applications/Networking
-Source0:	https://github.com/haiwen/seafile/archive/v%{version}.tar.gz
-# Source0-md5:	220790c24a8cb1ff88bacc03e4e87976
-Patch0:		codegen.patch
+Source0:	https://github.com/haiwen/seafile/archive/v%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	9904adcb43b7194a8e89552794f77209
 URL:		http://seafile.com/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -56,10 +55,14 @@ developing applications that use %{name}.
 
 %prep
 %setup -q
-%patch0 -p1
 
 # bogus destdir?
-sed -i -e 's/(DESTDIR)//' lib/libseafile.pc.in
+%{__sed} -i -e 's/(DESTDIR)//' lib/libseafile.pc.in
+
+%{__sed} -E -i -e '1s,#!\s*/usr/bin/env\s+python(\s|$),#!%{__python}\1,' \
+      app/seaf-cli \
+      scripts/breakpad.py \
+      setupwin.py
 
 %build
 %{__glib_gettextize}
