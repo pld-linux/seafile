@@ -6,15 +6,15 @@
 # TODO
 # - fix python to install sitescriptdir: %{py_sitedir}/seafile
 
-Summary:	File syncing and sharing software with file encryption and group sharing
+Summary:	Sync client daemon
 Name:		seafile
-Version:	7.0.5
-Release:	2
+Version:	7.0.7
+Release:	1
 License:	GPL v2
 Group:		Applications/Networking
 Source0:	https://github.com/haiwen/seafile/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	9904adcb43b7194a8e89552794f77209
-URL:		http://seafile.com/
+# Source0-md5:	b76b9dcf053867a548633610531c9250
+URL:		https://seafile.com/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	pkgconfig
